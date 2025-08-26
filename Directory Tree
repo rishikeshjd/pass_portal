@@ -1,0 +1,52 @@
+material-dashboard-react-nodejs-master/
+├── README.md
+├── LICENSE.md
+├── ISSUE_TEMPLATE.md
+├── CHANGELOG.md
+├── backend/
+│   ├── src/
+│   │   ├── index.js
+│   │   ├── passport.js
+│   │   ├── landing/
+│   │   │   └── [files...]
+│   │   ├── mongo/
+│   │   │   └── [files...]
+│   │   ├── routes/
+│   │   │   └── [api route files...]
+│   │   ├── schemas/
+│   │   │   └── [mongoose schema files...]
+│   │   └── services/
+│   │       └── [service logic files...]
+├── node-api/
+│   ├── src/
+│   │   ├── [source code files and folders]
+│   ├── src_bkp_080824/
+│   │   └── [backup source code]
+│   ├── images/
+│   │   └── [image files]
+│   ├── node_modules/
+│   │   └── [npm packages]
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── README.md
+│   ├── Req_shubhangi_2024-07-15_11:43:12.json
+│   ├── Req_shubhangi_2024-07-16_04:13:05.json
+│   ├── Req_shubhangi_2024-07-16_11:36:01.json
+│   ├── pswd.json
+│   ├── Req_undefined_2024-11-12_05:43:11.json
+│   ├── Req_shubhangi@mgd.com_2024-11-12_05:49:10.json
+│   ├── Request_Master.txt
+│   └── src_node.tar
+├── material-react-app/
+│   ├── [React frontend source files and folders]
+├── scripts/
+│   └── [utility scripts]
+├── DB_Design.odt
+├── DB-Design.txt
+├── DB_Design/
+│   └── [related DB design files]
+├── DB_Design.docx
+├── DB_Design.tgz
+├── node-api.tgz
+├── scriptTar.tgz
+├── work.txt
