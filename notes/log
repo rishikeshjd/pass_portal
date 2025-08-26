@@ -1,0 +1,469 @@
+allowing access to https://registry.npmjs.org so I can install packages
+
+
+[schedule_system@Sch-INT-Sys rishi_aug_backup]$ ls backend_full
+express-4.19.2.tgz  package.json  package-lock.json  server.js
+
+
+[schedule_system@Sch-INT-Sys rishi_aug_backup]$ ls src_full
+App.css  App.js  data.json  index.js  package.json  package-lock.json  sampleData.json
+
+
+[schedule_system@Sch-INT-Sys rishi_aug_backup]$ ls react-cdn-poject  
+index.html
+
+
+[schedule_system@Sch-INT-Sys rishi_aug_backup]$ ls react-cdn-demo
+index2.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[schedule_system@Sch-INT-Sys backend]$ curl http://localhost:8080/
+curl: (7) Failed to connect to localhost port 8080: Connection refused
+[schedule_system@Sch-INT-Sys backend]$ node src/index.js
+(node:854004) [MONGOOSE] DeprecationWarning: Mongoose: the `strictQuery` option will be switched back to `false` by default in Mongoose 7. Use `mongoose.set('strictQuery', false);` if you want to prepare for this change. Or use `mongoose.set('strictQuery', true);` to suppress this warning.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+Server listening to port 8080
+DB connection
+^C
+[schedule_system@Sch-INT-Sys backend]$ netstat -tulnp | grep 8080
+(Not all processes could be identified, non-owned process info
+ will not be shown, you would have to be root to see it all.)
+[schedule_system@Sch-INT-Sys backend]$ sudo netstat -tulnp | grep 8080
+
+We trust you have received the usual lecture from the local System
+Administrator. It usually boils down to these three things:
+
+    #1) Respect the privacy of others.
+    #2) Think before you type.
+    #3) With great power comes great responsibility.
+
+[sudo] password for schedule_system: 
+[schedule_system@Sch-INT-Sys backend]$ sudo netstat -tulnp | grep 8080
+[sudo] password for schedule_system: 
+[schedule_system@Sch-INT-Sys backend]$ curl http://localhost:8080/
+curl: (7) Failed to connect to localhost port 8080: Connection refused
+[schedule_system@Sch-INT-Sys backend]$ node src/index.js
+(node:854346) [MONGOOSE] DeprecationWarning: Mongoose: the `strictQuery` option will be switched back to `false` by default in Mongoose 7. Use `mongoose.set('strictQuery', false);` if you want to prepare for this change. Or use `mongoose.set('strictQuery', true);` to suppress this warning.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+Server listening to port 8080
+DB connection
+^C
+^C
+[schedule_system@Sch-INT-Sys backend]$ sudo netstat -tulnp | grep 8080
+[sudo] password for schedule_system: 
+[schedule_system@Sch-INT-Sys backend]$ node --trace-warnings src/index.js
+(node:854539) [MONGOOSE] DeprecationWarning: Mongoose: the `strictQuery` option will be switched back to `false` by default in Mongoose 7. Use `mongoose.set('strictQuery', false);` if you want to prepare for this change. Or use `mongoose.set('strictQuery', true);` to suppress this warning.
+    at Mongoose.connect (/home/schedule_system/rishikesh/pass_portal/rishikesh-spacecraft-scheduler/backend/node_modules/mongoose/lib/index.js:410:5)
+    at dbConnect (file:///home/schedule_system/rishikesh/pass_portal/rishikesh-spacecraft-scheduler/backend/src/mongo/index.js:8:19)
+    at file:///home/schedule_system/rishikesh/pass_portal/rishikesh-spacecraft-scheduler/backend/src/index.js:33:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:222:25)
+    at async ModuleLoader.import (node:internal/modules/esm/loader:323:24)
+    at async loadESM (node:internal/process/esm_loader:28:7)
+    at async handleMainPromise (node:internal/modules/run_main:113:12)
+Server listening to port 8080
+DB connection
+
+
+
+
+
+
+
+
+
+
+/rishikesh-spacecraft-scheduler
+│
+├── frontend/       # React application
+│   ├── node_modules/
+│   ├── public/
+│   ├── src/
+│   │   └── App.js
+│   ├── package.json
+│
+├── backend/        # Node + Express API
+│   ├── node_modules/
+│   ├── src/
+│   │   └── app.js (or index.js)
+│   ├── package.json
+│
+└── README.md       # Optional documentation
+
+
+
+
+
+
+
+mkdir -p ~/rishikesh/pass_portal/rishikesh-spacecraft-scheduler
+cd ~/rishikesh/pass_portal/rishikesh-spacecraft-scheduler
+
+
+
+npx create-react-app frontend
+cd frontend
+npm install    # Install dependencies
+
+
+cd ..
+
+mkdir backend
+cd backend
+npm init -y
+npm install express cors dotenv mongoose
+mkdir src
+touch src/app.js
+
+src/app.js
+const express = require('express');
+const cors = require('cors');
+require('dotenv').config();
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+
+app.get('/', (req, res) => {
+  res.send('Backend is working!');
+});
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
+
+
+
+"proxy": "http://localhost:5000",
+
+
+node src/app.js
+
+
+
+npm ERR! 403 Forbidden - GET https://registry.npmjs.org/create-react-app
+
+
+frontend/
+├── public/
+│   └── index.html
+├── src/
+│   └── App.js
+│   └── index.js
+├── webpack.config.js
+├── .babelrc
+├── package.json
+
+
+
+
+public/index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Spacecraft Scheduler</title>
+</head>
+<body>
+  <div id="root"></div>
+</body>
+</html>
+
+
+
+
+
+src/index.js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+
+ReactDOM.render(<App />, document.getElementById('root'));
+
+
+src/App.js
+
+import React from 'react';
+
+const App = () => {
+  return <h1>ISRO Spacecraft Scheduler - React App</h1>;
+};
+
+export default App;
+
+
+.babelrc
+import React from 'react';
+
+const App = () => {
+  return <h1>ISRO Spacecraft Scheduler - React App</h1>;
+};
+
+export default App;
+
+
+webpack.config.js
+
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+module.exports = {
+  entry: './src/index.js',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js'
+  },
+  mode: 'development',
+  devServer: {
+    static: './dist',
+    port: 3000
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: 'babel-loader'
+      }
+    ]
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './public/index.html'
+    })
+  ]
+};
+
+
+npx webpack serve
+
+
+
+[schedule_system@Sch-INT-Sys rishikesh-spacecraft-scheduler]$ mkdir frontend
+cd frontend
+npm init -y
+Wrote to /home/schedule_system/rishikesh/pass_portal/rishikesh-spacecraft-scheduler/frontend/package.json:
+
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+
+
+[schedule_system@Sch-INT-Sys frontend]$ npm install react react-dom
+npm install --save-dev webpack webpack-cli webpack-dev-server babel-loader @babel/core @babel/preset-env @babel/preset-react html-webpack-plugin
+npm ERR! code E403
+npm ERR! 403 403 Forbidden - GET https://registry.npmjs.org/react
+npm ERR! 403 In most cases, you or one of your dependencies are requesting
+npm ERR! 403 a package version that is forbidden by your security policy, or
+npm ERR! 403 on a server you do not have access to.
+
+npm ERR! A complete log of this run can be found in: /home/schedule_system/.npm/_logs/2025-08-26T04_25_43_473Z-debug-0.log
+npm ERR! code E403
+npm ERR! 403 403 Forbidden - GET https://registry.npmjs.org/@babel%2fcore
+npm ERR! 403 In most cases, you or one of your dependencies are requesting
+npm ERR! 403 a package version that is forbidden by your security policy, or
+npm ERR! 403 on a server you do not have access to.
+
+npm ERR! A complete log of this run can be found in: /home/schedule_system/.npm/_logs/2025-08-26T04_25_44_773Z-debug-0.log
+
+
+
+
+
+mkdir public
+cd public
+touch index.html script.js style.css
+
+
+index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ISRO Scheduler</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>ISRO Spacecraft Scheduling</h1>
+  <form id="scheduleForm">
+    <input type="text" id="satellite" placeholder="Satellite Name" required />
+    <input type="datetime-local" id="startTime" required />
+    <input type="datetime-local" id="endTime" required />
+    <button type="submit">Submit</button>
+  </form>
+  <div id="response"></div>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+script.js
+document.getElementById('scheduleForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const data = {
+    satellite: document.getElementById('satellite').value,
+    start: document.getElementById('startTime').value,
+    end: document.getElementById('endTime').value,
+  };
+
+  try {
+    const res = await fetch('http://localhost:5000/api/schedule', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    const result = await res.json();
+    document.getElementById('response').innerText = result.message || 'Success!';
+  } catch (err) {
+    document.getElementById('response').innerText = 'Error submitting data.';
+  }
+});
+
+
+script.css
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+input, button {
+  margin: 5px;
+  padding: 8px;
+}
+
+
+
+
+
+
+AUGUST 26, 2025; SUMMARY PROMPT LOG
+
+Absolutely! Here’s a **more detailed prompt** you can use tomorrow to resume smoothly, including context so I immediately know what’s going on:
+
+---
+
+**Detailed prompt for tomorrow:**
+
+Hi ChatGPT, I’m back to continue working on the **Node.js backend project** for the Material Dashboard React with Node.js. Yesterday, we went through these major steps:
+
+* Navigated the project folders (`node-api`, `backend`, `node_modules`, etc.) and checked files like `package.json` and `src/index.js`.
+* Tried running the backend server with `node src/index.js`.
+* Encountered issues with missing modules like `express` and fixed it by running `npm install`.
+* Started the server and got stuck at the "DB connection" log message.
+* Verified MongoDB service (`mongod`) was active and running.
+* Tried to test the backend with `curl http://localhost:8080/` but got connection refused.
+* Checked if port 8080 was listening using `netstat` but nothing showed up.
+* Tried running the server again and verified the server logged "Server listening to port 8080" and "DB connection" but no response from the port.
+* We suspect the server might be stuck waiting for MongoDB connection or other issues with the database connection.
+* Ran into permission issues using `sudo` due to not knowing the password.
+
+I have a detailed summary of all commands and outputs from yesterday, which I will paste now:
+\[Paste your detailed summary here]
+
+Please help me continue troubleshooting the backend, focus on:
+
+1. Verifying the MongoDB connection from the Node.js app.
+2. Checking the backend logs and any errors during connection.
+3. Confirming the backend server is properly listening on port 8080.
+4. Next steps to fix connection refused issues.
+
+Also, if needed, help me add logs or debug statements in the backend code so we can figure out exactly where it’s stuck.
+
+---
+
+Would you like me to add a reminder for you to paste the summary tomorrow? Or make it even more detailed with some example commands ready to run next?
+
+
+
+
+
+
+
+
+
+/home/schedule_system/Pictures/Screenshot from 2025-08-26 11-50-53.png
+/home/schedule_system/Pictures/Screenshot from 2025-08-26 11-51-04.png
+/home/schedule_system/Pictures/Screenshot from 2025-08-26 11-51-11.png
+/home/schedule_system/Pictures/Screenshot from 2025-08-26 11-51-15.png
+/home/schedule_system/Pictures/Screenshot from 2025-08-26 11-51-21.png
+/home/schedule_system/Pictures/Screenshot from 2025-08-26 11-51-28.png
+/home/schedule_system/Pictures/Screenshot from 2025-08-26 11-51-32.png
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
