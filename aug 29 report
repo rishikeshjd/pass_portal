@@ -1,0 +1,166 @@
+==================================================================
+ISRO Scheduling System – Work Summary & Technical Report
+Date: [Friday, August 29, 2025]
+Prepared by: Rishikesh
+==================================================================
+
+>> Project Directory in Use:
+    ~/rishikesh-spacecraft-scheduler/
+
+>> Active Backend Folder:
+    ~/rishikesh-spacecraft-scheduler/backend/
+
+>> Active Frontend Folder:
+    ~/rishikesh-spacecraft-scheduler/frontend/
+
+>> Currently Using:
+    ✅ rishikesh-spacecraft-scheduler
+    ❌ Not using: rishi-aug-backup (Outdated)
+
+--------------------------------------------------
+SECTION 1: SYSTEM OVERVIEW
+--------------------------------------------------
+- Full-stack application for scheduling spacecraft-related requests.
+- Users can log in, submit requests via checkboxes.
+- Admin receives the requests in .json format.
+- Stack used:
+    - Backend: Node.js, Express, MongoDB/Mongoose, Passport, JWT
+    - Frontend: React (assumed, though not fully detailed today)
+    - Authentication: Local & JWT-based with optional email reset
+    - Storage of requests: Filesystem (Request_Master.txt, JSON dumps)
+    - User data: Either MongoDB (`userModel`) or local file (`pswd.json`)
+
+--------------------------------------------------
+SECTION 2: PROJECT STRUCTURE
+--------------------------------------------------
+BACKEND:
+├── package.json (Dependencies listed below)
+├── .env (Missing - need to recreate or request from supervisor)
+├── node_modules/
+├── images/
+├── pswd.json (Used in some auth flows)
+├── *.json (User request dumps)
+├── src/
+│   ├── index.js                 (Main server entrypoint)
+│   ├── passport.js              (JWT & Passport strategy config)
+│   ├── mongo/                   (MongoDB connection & utils)
+│   ├── routes/
+│   │   ├── index.js             (Exports authRoutes, meRoutes, userRoutes)
+│   │   ├── auth/index.js        (Handles /login, /register, etc.)
+│   ├── services/auth/index.js  (Logic for login, register, send-request, etc.)
+│   ├── schemas/                (Mongoose schemas)
+│   │   ├── user.schema.js
+│   │   ├── roles.schema.js
+│   │   ├── passwordResets.schema.js
+
+FRONTEND:
+├── package.json (Empty shell so far, needs work)
+├── public/
+    (No frontend source code reviewed today)
+
+--------------------------------------------------
+SECTION 3: BACKEND DEPENDENCIES
+--------------------------------------------------
+From backend/package.json:
+- express, mongoose, cors, dotenv
+- jsonwebtoken, bcrypt, body-parser
+- passport, passport-jwt, passport-local
+- nodemailer, node-cron, mysql/mysql2 (partial), pg, sequelize
+- devDeps: babel, types, etc.
+
+Backend dev start command:
+    npm run start:dev
+
+--------------------------------------------------
+SECTION 4: AUTHENTICATION FLOW
+--------------------------------------------------
+LOGIN FLOW:
+- POST /login
+- Calls `loginRouteHandler(req, res, email, password)`
+- Verifies from MongoDB `userModel` or local `pswd.json`
+- Validates password with bcrypt
+- Assembles roles & allowed satellites/stations from `roleModel`
+- Adds "GenUser" fallback role
+- Returns JWT token with claims:
+    id, name, roles, functions, sats, stns
+
+REGISTER FLOW:
+- POST /register
+- Validates password length
+- Either adds to MongoDB or appends to `pswd.json`
+- Stores user with:
+    { user, name, password (hashed), sats, role }
+
+OTHER ROUTES:
+- /logout: Just returns 204
+- /password-forgot: Sends email using MailTrap (SMTP settings in .env)
+- /password-reset: Updates password in MongoDB
+- /send-request: Writes request as JSON into `Request_Master.txt`
+- /get-users: Returns user data from `userModel`
+
+--------------------------------------------------
+SECTION 5: MONGOOSE SCHEMAS
+--------------------------------------------------
+1. `userModel` (User info):
+   - name, username (unique), password
+   - allowed: Array of { role_id, satellites, stations }
+
+2. `roleModel` (Roles):
+   - title, id (unique), functions (array)
+
+3. `passwordResetModel` (Password reset tokens):
+   - email, token, created_at
+
+--------------------------------------------------
+SECTION 6: REQUEST LOGIC
+--------------------------------------------------
+- When user submits a form (checkboxed request), it is sent to `/send-request`.
+- Data is parsed and saved in a flat file:
+    ➤ Filename: `Request_Master.txt` (currently fixed)
+    ➤ Format: JSON
+    ➤ Other historical filenames include `Req_<user>_<timestamp>.json`
+
+--------------------------------------------------
+SECTION 7: OPEN ISSUES / NEXT STEPS
+--------------------------------------------------
+✅ DONE TODAY:
+- Identified working backend directory
+- Validated active route handlers
+- Explored login/register logic
+- Mapped MongoDB schemas
+- Understood request saving format
+- Created a ZIP archive for transfer (attempted, not yet transferred)
+
+🛠 TODO NEXT:
+1. Fix .env file – currently missing:
+    - `PORT=8080`
+    - `APP_URL_CLIENT=http://localhost:3000`
+    - `MAILTRAP_USER=...`
+    - `MAILTRAP_PASSWORD=...`
+    - `SCHEDULE_HOUR=...` (optional cron)
+2. Set up working **frontend** with correct port (check React setup)
+3. Make ZIP transfer from server to laptop using email or base64 splitting
+4. Validate login/register with both `pswd.json` and MongoDB toggles
+5. Clarify what parts will be migrated fully to MongoDB vs legacy file storage
+6. (Optional): Secure endpoints (add rate limiting, CSRF, XSS protections)
+
+--------------------------------------------------
+SECTION 8: ZIP ARCHIVE CREATION
+--------------------------------------------------
+To download project:
+From project’s parent folder:
+    cd ..
+    zip -r rishikesh-spacecraft-scheduler.zip rishikesh-spacecraft-scheduler
+
+To split ZIP for clipboard transfer:
+    base64 rishikesh-spacecraft-scheduler.zip > scheduler.b64
+    split -b 500k scheduler.b64 chunk_
+
+To reassemble on laptop:
+    cat chunk_* > scheduler.b64
+    base64 -d scheduler.b64 > rishikesh-spacecraft-scheduler.zip
+    unzip rishikesh-spacecraft-scheduler.zip
+
+--------------------------------------------------
+END OF REPORT
+--------------------------------------------------
