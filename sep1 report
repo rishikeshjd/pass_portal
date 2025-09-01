@@ -1,0 +1,301 @@
+##############################
+## SEPTEMBER 1 WORK REPORT ##
+## ISRO PassPortal Project  ##
+## Author: Rishikesh J D    ##
+## Date: Sept 1, 2025       ##
+##############################
+
+==========================
+== SUMMARY OF WORK DONE ==
+==========================
+
+> Project Directory in Use:
+  ~/rishikesh/pass_portal/rishikesh-spacecraft-scheduler/
+
+> Primary Directories:
+  - Frontend: ./frontend
+  - Backend:  ./backend
+
+> Note:
+  - This project was bootstrapped by copying the frontend code of another project ("Margadarshak") due to lack of install permissions.
+  - All instances of "Margadarshak" branding were manually removed or are being phased out.
+
+----------------------------
+== BACKEND SETUP & STATUS ==
+----------------------------
+
+- ✅ Navigated to backend folder:
+    $ cd backend
+
+- ✅ Edited `.env` file with Nano (contents not shown for security):
+    $ nano .env
+
+- ✅ Installed packages:
+    $ npm install
+
+- ✅ Ran backend dev server:
+    $ npm run start:dev
+
+- ❌ Faced error: `EADDRINUSE: address already in use :::8080`
+
+- ✅ Solved it by:
+    $ lsof -i :8080
+    $ kill -9 <PID>
+    $ npm run start:dev
+
+- ✅ Backend output confirmed:
+    - Server listening on port 8080
+    - DB connection successful
+
+-----------------------------
+== FRONTEND SETUP & STATUS ==
+-----------------------------
+
+- ✅ Navigated to frontend folder:
+    $ cd frontend
+
+- ✅ Verified presence of `App.js`, `routes.js`, `services/`, etc.
+
+- ✅ Started frontend:
+    $ npm start
+
+- ❌ Encountered runtime error:
+    > "axios is not defined" in htttp.service.js
+
+- ✅ Solved by editing `htttp.service.js`:
+    - Added: `import axios from "axios"`
+    - Corrected usage of `Axios` → changed to `axios`
+
+- ✅ Verified axios is already installed:
+    $ npm list axios → axios@1.7.2
+
+----------------------------
+== CODE CLEANUP & BRANDING ==
+----------------------------
+
+- ✅ Searched for all mentions of "Margadarshak":
+    $ grep -r "Margadarshak" ./src
+
+- ✅ Removed/Planned to remove old references:
+    - App.js
+    - DefaultNavbar
+    - Download links
+    - Branding strings
+
+-------------------------
+== PLANNING & GOAL SETUP ==
+-------------------------
+
+🎯 Final Objective:
+> Build a web portal ("PassPortal") where:
+> - Users log in
+> - They select a list of spacecraft commands using checkboxes
+> - The selected list is submitted
+> - Admin receives this request as a `.json` file saved locally
+
+🌱 What was done:
+- Verified working frontend/backend
+- Setup and fixed Axios interceptor service
+- Confirmed backend API connectivity via proxy
+- Identified components to be cleaned and rewritten
+- Drafted checkbox-based command selection UI
+
+Next Tasks (Planned):
+1. Cleanup `routes.js` to only include login/register/dashboard
+2. Replace dashboard layout with simple checkbox form
+3. Submit selected commands to backend `/send-request` API
+4. Write commands into `Request_Master.txt` on backend
+5. Add logout + token check logic
+6. Finalize frontend branding, polish UI
+
+---------------------
+== PROJECT STRUCTURE ==
+---------------------
+
+Current directory tree:
+
+rishikesh-spacecraft-scheduler/
+├── backend/
+│   ├── .env
+│   ├── package.json
+│   └── src/
+│       ├── index.js
+│       ├── routes/
+│       ├── schemas/
+│       └── services/
+├── frontend/
+│   ├── package.json
+│   └── src/
+│       ├── App.js
+│       ├── routes.js
+│       ├── auth/
+│       ├── components/
+│       ├── layouts/
+│       │   └── dashboard/
+│       ├── services/
+│       │   ├── interceptor.js
+│       │   └── htttp.service.js
+│       ├── context/
+│       └── assets/
+
+====================
+== END OF REPORT ==
+====================
+
+
+############################################################
+## INSTRUCTIONS FOR NEXT TIME (COPY THIS INTO CHATGPT) ##
+############################################################
+
+1. Start backend:
+-----------------
+cd ~/rishikesh/pass_portal/rishikesh-spacecraft-scheduler/backend
+npm run start:dev
+
+If you get error "address in use":
+lsof -i :8080
+kill -9 <PID>
+npm run start:dev
+
+2. Start frontend:
+------------------
+cd ~/rishikesh/pass_portal/rishikesh-spacecraft-scheduler/frontend
+npm start
+
+If `axios` error occurs:
+npm install axios
+
+3. Clean `routes.js`:
+---------------------
+Edit `src/routes.js` and keep only:
+-----------------------------------
+import Dashboard from "layouts/dashboard";
+import Login from "auth/login";
+import Register from "auth/register";
+
+const routes = [
+  {
+    type: "auth",
+    name: "Login",
+    key: "login",
+    route: "/auth/login",
+    component: <Login />,
+  },
+  {
+    type: "auth",
+    name: "Register",
+    key: "register",
+    route: "/auth/register",
+    component: <Register />,
+  },
+  {
+    type: "route",
+    name: "Dashboard",
+    key: "dashboard",
+    route: "/dashboard",
+    component: <Dashboard />,
+  },
+];
+
+export default routes;
+
+4. Create dashboard form:
+-------------------------
+Edit: src/layouts/dashboard/index.js
+
+Paste this:
+------------
+import React, { useState } from "react";
+import HttpService from "services/htttp.service";
+
+function Dashboard() {
+  const [selectedCommands, setSelectedCommands] = useState([]);
+
+  const commands = [
+    "Command_Alpha",
+    "Command_Bravo",
+    "Command_Charlie",
+    "Command_Delta",
+  ];
+
+  const handleCheckboxChange = (command) => {
+    setSelectedCommands((prev) =>
+      prev.includes(command)
+        ? prev.filter((c) => c !== command)
+        : [...prev, command]
+    );
+  };
+
+  const handleSubmit = async () => {
+    try {
+      await HttpService.post("/send-request", {
+        commands: selectedCommands,
+        submittedAt: new Date(),
+      });
+      alert("Request submitted successfully!");
+    } catch (err) {
+      alert("Failed to submit: " + (err?.message || "Unknown error"));
+    }
+  };
+
+  return (
+    <div style={{ padding: 20 }}>
+      <h2>Select Commands</h2>
+      {commands.map((cmd) => (
+        <div key={cmd}>
+          <label>
+            <input
+              type="checkbox"
+              checked={selectedCommands.includes(cmd)}
+              onChange={() => handleCheckboxChange(cmd)}
+            />
+            {cmd}
+          </label>
+        </div>
+      ))}
+
+      <button style={{ marginTop: 20 }} onClick={handleSubmit}>
+        Submit
+      </button>
+    </div>
+  );
+}
+
+export default Dashboard;
+
+5. Confirm backend route:
+-------------------------
+Ensure backend has a POST route at `/send-request`
+It should:
+- Receive the JSON body from frontend
+- Write it to a local file (`Request_Master.txt`)
+- Respond with status OK
+
+6. Check local file:
+--------------------
+Backend should save the request to:
+  ./backend/Request_Master.txt
+
+Open with:
+  $ cat backend/Request_Master.txt
+
+7. Other fixes:
+---------------
+- Update branding/logo texts in:
+  - App.js
+  - DefaultNavbar/index.js
+  - Helmet metadata
+
+8. Common errors and fixes:
+---------------------------
+| Error                        | Fix                                        |
+|-----------------------------|---------------------------------------------|
+| "axios is not defined"      | import axios at top of service file         |
+| 8080 in use                 | kill process with `lsof` and `kill -9`      |
+| .env missing                | Make sure it's present in backend dir       |
+| CORS issues                 | Ensure backend has CORS enabled             |
+
+##########################################################
+## DONE — Paste this entire block into ChatGPT next time ##
+##########################################################
+
