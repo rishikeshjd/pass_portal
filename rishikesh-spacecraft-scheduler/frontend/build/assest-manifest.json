@@ -1,0 +1,44 @@
+{
+  "files": {
+    "main.js": "/static/js/main.cd6c2ea3.js",
+    "static/media/bg-sign-up-cover.jpeg": "/static/media/bg-sign-up-cover.9a9fb8fecf656883ddc4.jpeg",
+    "static/media/bg-sign-in-basic.jpeg": "/static/media/bg-sign-in-basic.6b69ae09cfb5239717f0.jpeg",
+    "static/media/home-decor-3.jpg": "/static/media/home-decor-3.74d13fcbd3c631fc7908.jpg",
+    "static/media/home-decor-2.jpg": "/static/media/home-decor-2.b4e5397c9846645ba275.jpg",
+    "static/media/home-decor-1.jpg": "/static/media/home-decor-1.05e218fd495ccc65c99d.jpg",
+    "static/media/bg-profile.jpeg": "/static/media/bg-profile.af1219a742e09fc7b612.jpeg",
+    "static/media/bg-reset-cover.jpeg": "/static/media/bg-reset-cover.971989897672e4cc7ab1.jpeg",
+    "static/media/search1.png": "/static/media/search1.17b40541e1ceaa04a220.png",
+    "static/media/orbit1.png": "/static/media/orbit1.f516eeb544232ac92019.png",
+    "static/media/home-decor-4.jpeg": "/static/media/home-decor-4.5b448fd339a14695f6aa.jpeg",
+    "static/media/station1.png": "/static/media/station1.15ef6d4cf2fe1c5724cb.png",
+    "static/media/operations1.png": "/static/media/operations1.00812e5d0d15b8e3d400.png",
+    "static/media/station2.png": "/static/media/station2.5ad63df3ffacf96eaaae.png",
+    "static/media/oprns_combination.png": "/static/media/oprns_combination.2476242e7d62e65702bf.png",
+    "static/media/satellite2.png": "/static/media/satellite2.4f76c18b64b79631189c.png",
+    "static/media/team-1.jpg": "/static/media/team-1.0fd36e0ee93dcfacdef8.jpg",
+    "static/media/bruce-mars.jpg": "/static/media/bruce-mars.8a606c4a6dab54c9ceff.jpg",
+    "static/media/marie.jpg": "/static/media/marie.c28f32663b6432b46f78.jpg",
+    "static/media/team-2.jpg": "/static/media/team-2.13ae2ce3e12f4cfed420.jpg",
+    "static/media/team-3.jpg": "/static/media/team-3.0ef0be95e6850814c79e.jpg",
+    "static/media/ivana-square.jpg": "/static/media/ivana-square.f7bc23b269d1d2509c82.jpg",
+    "static/media/kal-visuals-square.jpg": "/static/media/kal-visuals-square.3210e28a48ff572ae88b.jpg",
+    "static/media/team-4.jpg": "/static/media/team-4.85c82b6e60178804017f.jpg",
+    "static/media/end_date.png": "/static/media/end_date.20d4e12bf96657910e08.png",
+    "static/media/start_date.png": "/static/media/start_date.354c9a3b7f5164c48c0e.png",
+    "static/media/github.svg": "/static/media/github.067f80f311bc16bd0d1216457d09bdb3.svg",
+    "static/media/logo-slack.svg": "/static/media/logo-slack.7c47c5aa474b5c4fb39fcf05ffb8e4e7.svg",
+    "static/media/logo-xd.svg": "/static/media/logo-xd.6e37886f94dba0c2967ece68a152e30c.svg",
+    "static/media/logo-invision.svg": "/static/media/logo-invision.a1062115730dcd10e1c4f4abe7b9ab33.svg",
+    "static/media/logo-spotify.svg": "/static/media/logo-spotify.e83cf56c9d99a1fdf59e8deb58bbe470.svg",
+    "static/media/logo-jira.svg": "/static/media/logo-jira.c19fd4e416babfbd0fdb0a794188c601.svg",
+    "static/media/logo-atlassian.svg": "/static/media/logo-atlassian.f2b0e8570a4b4ce768854ff3dad1a6e1.svg",
+    "static/media/logo-asana.svg": "/static/media/logo-asana.d758f410d82760a61d1eabcb03409de6.svg",
+    "index.html": "/index.html",
+    "main.cd6c2ea3.js.map": "/static/js/main.cd6c2ea3.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.cd6c2ea3.js"
+  ]
+}
+
