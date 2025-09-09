@@ -27,10 +27,10 @@ Prerequisites
 
 # BACKEND INITALIZATION    
 cd backend
- nnpm install
- Set environment variables and MongoDB connection credentials
- npm start 
- Launch API server with hot-reloading capabilities
+npm install
+Set environment variables and MongoDB connection credentials
+npm start 
+Launch API server with hot-reloading capabilities
 
 # FRONTEND INITIALIZATION
  cd frontend
