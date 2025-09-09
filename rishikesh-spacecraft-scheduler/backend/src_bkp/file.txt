@@ -1,0 +1,5 @@
+[schedule_system@Sch-INT-Sys backend]$ cd src_bkp_080824
+[schedule_system@Sch-INT-Sys src_bkp_080824]$ ls
+index.js  landing  mongo  passport.js  routes  schemas  services
+
+####IGNORE####
