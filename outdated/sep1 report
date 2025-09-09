@@ -144,7 +144,7 @@ rishikesh-spacecraft-scheduler/
 
 
 ############################################################
-## INSTRUCTIONS FOR NEXT TIME (COPY THIS INTO CHATGPT) ##
+## INSTRUCTIONS FOR NEXT TIME ##
 ############################################################
 
 1. Start backend:
@@ -296,6 +296,6 @@ Open with:
 | CORS issues                 | Ensure backend has CORS enabled             |
 
 ##########################################################
-## DONE — Paste this entire block into ChatGPT next time ##
+## DONE ##
 ##########################################################
 
