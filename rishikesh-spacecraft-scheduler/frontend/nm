@@ -1,0 +1,5 @@
+These directories (nm1, nm2, nm3, etc.) contain compressed packages or extracted modules that resemble parts of the node_modules folder. They are likely backups, archives, or alternative installations of dependencies required by the project. However, these folders should not be treated as source code or project files. Instead, they represent intermediate or auxiliary package data related to Node.js package management.
+
+The proper way to handle dependencies in this project is through the package.json and package-lock.json files, which list the exact dependencies and versions needed. When setting up the project on a new machine or after cloning the repository, running npm install will recreate the node_modules directory by downloading all necessary packages from the npm registry, making these nm* folders redundant for version control.
+
+For clarity and repository cleanliness, these folders are excluded from the GitHub repository, and explanatory files are added to inform collaborators or maintainers why these directories exist but should not be added to version control or modified.
