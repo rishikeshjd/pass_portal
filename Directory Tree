@@ -1,52 +1,214 @@
-material-dashboard-react-nodejs-master/
-├── README.md
-├── LICENSE.md
-├── ISSUE_TEMPLATE.md
-├── CHANGELOG.md
+rishikesh/pass_portal/rishikesh-spacecraft-scheduler/
 ├── backend/
-│   ├── src/
-│   │   ├── index.js
-│   │   ├── passport.js
-│   │   ├── landing/
-│   │   │   └── [files...]
-│   │   ├── mongo/
-│   │   │   └── [files...]
-│   │   ├── routes/
-│   │   │   └── [api route files...]
-│   │   ├── schemas/
-│   │   │   └── [mongoose schema files...]
-│   │   └── services/
-│   │       └── [service logic files...]
-├── node-api/
-│   ├── src/
-│   │   ├── [source code files and folders]
-│   ├── src_bkp_080824/
-│   │   └── [backup source code]
+│   ├── data.json
 │   ├── images/
-│   │   └── [image files]
-│   ├── node_modules/
-│   │   └── [npm packages]
+│   │   ├── admin.jpg
+│   │   ├── creator.jpg
+│   │   └── member.jpg
+│   ├── node_modules/                # npm dependencies (excluded from GitHub)
 │   ├── package.json
 │   ├── package-lock.json
+│   ├── pswd.json
 │   ├── README.md
+│   ├── Request_Master.txt
 │   ├── Req_shubhangi_2024-07-15_11:43:12.json
 │   ├── Req_shubhangi_2024-07-16_04:13:05.json
 │   ├── Req_shubhangi_2024-07-16_11:36:01.json
-│   ├── pswd.json
-│   ├── Req_undefined_2024-11-12_05:43:11.json
 │   ├── Req_shubhangi@mgd.com_2024-11-12_05:49:10.json
-│   ├── Request_Master.txt
-│   └── src_node.tar
-├── material-react-app/
-│   ├── [React frontend source files and folders]
-├── scripts/
-│   └── [utility scripts]
-├── DB_Design.odt
-├── DB-Design.txt
-├── DB_Design/
-│   └── [related DB design files]
-├── DB_Design.docx
-├── DB_Design.tgz
-├── node-api.tgz
-├── scriptTar.tgz
-├── work.txt
+│   ├── Req_undefined_2024-11-12_05:43:11.json
+│   ├── src/                        # Backend source code
+│   │   ├── index.js
+│   │   ├── landing/
+│   │   │   └── index.html
+│   │   ├── mongo/
+│   │   │   ├── clearDbs.js
+│   │   │   ├── index.js
+│   │   │   ├── ReseedAction.js
+│   │   │   └── seedData.js
+│   │   ├── passport.js
+│   │   ├── routes/
+│   │   │   ├── auth/
+│   │   │   │   └── index.js
+│   │   │   ├── dashboard.js
+│   │   │   ├── index.js
+│   │   │   ├── me/
+│   │   │   │   └── index.js
+│   │   │   ├── schedule.js
+│   │   │   ├── sendRequest.js
+│   │   │   └── users/
+│   │   │       └── index.js
+│   │   ├── schemas/
+│   │   │   ├── passwordResets.schema.js
+│   │   │   ├── roles.schema.js
+│   │   │   └── user.schema.js
+│   │   └── services/
+│   │       ├── auth/
+│   │       │   └── index.js
+│   │       └── me/
+│   │           └── index.js
+│   ├── src_bkp_080824/            # Backend source backup folder, similar structure
+│   └── src_node.tar               # Backend source tarball archive
+├── frontend/
+│   ├── build/
+│   │   ├── apple-icon.png
+│   │   ├── asset-manifest.json
+│   │   ├── chartData.json
+│   │   ├── dashboardData.json
+│   │   ├── data.json
+│   │   ├── favicon.png
+│   │   ├── images/
+│   │   │   ├── dashboard.png
+│   │   │   ├── forgot-password.png
+│   │   │   ├── login.png
+│   │   │   ├── profile.png
+│   │   │   ├── register.png
+│   │   │   └── reset-password.png
+│   │   ├── index.html
+│   │   ├── manifest.json
+│   │   ├── Margadarshak_FRD_v2.pdf
+│   │   ├── pswd.json
+│   │   ├── requestDetails.json
+│   │   ├── robots.txt
+│   │   └── static/
+│   │       ├── js/
+│   │       │   ├── main.cd6c2ea3.js
+│   │       │   ├── main.cd6c2ea3.js.LICENSE.txt
+│   │       │   └── main.cd6c2ea3.js.map
+│   │       └── media/
+│   │           ├── bg-profile.af1219a742e09fc7b612.jpeg
+│   │           ├── bg-reset-cover.971989897672e4cc7ab1.jpeg
+│   │           ├── bg-sign-in-basic.6b69ae09cfb5239717f0.jpeg
+│   │           ├── home-decor-1.05e218fd495ccc65c99d.jpg
+│   │           ├── github.067f80f311bc16bd0d1216457d09bdb3.svg
+│   │           └── ... (other media files)
+│   ├── node_modules/               # npm dependencies (excluded from GitHub)
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── public/
+│   │   ├── apple-icon.png
+│   │   ├── chartData.json
+│   │   ├── data.json
+│   │   ├── favicon.png
+│   │   ├── images/
+│   │   ├── index.html
+│   │   ├── manifest.json
+│   │   ├── robots.txt
+│   │   ├── MonthlyReport_01022024_29022024.pdf
+│   │   ├── StnAnalysisReport_01-02-24_To_29-02-24.pdf
+│   │   └── ... (other PDF and config files)
+│   ├── src/
+│   │   ├── App.js
+│   │   ├── assets/
+│   │   │   ├── images/
+│   │   │   │   ├── apple-icon.png
+│   │   │   │   ├── favicon.png
+│   │   │   │   ├── logos/
+│   │   │   │   │   ├── gray-logos/
+│   │   │   │   │   ├── mastercard.png
+│   │   │   │   │   └── visa.png
+│   │   │   ├── theme/
+│   │   │   │   ├── base/
+│   │   │   │   ├── components/
+│   │   │   │   ├── functions/
+│   │   │   │   ├── index.js
+│   │   │   │   └── theme-rtl.js
+│   │   ├── auth/
+│   │   │   ├── forgot-password/
+│   │   │   │   └── index.js
+│   │   │   ├── login/
+│   │   │   │   └── index.js
+│   │   │   ├── register/
+│   │   │   │   └── index.js
+│   │   │   └── reset-password/
+│   │   │       └── index.js
+│   │   ├── components/
+│   │   │   ├── MDAlert/
+│   │   │   ├── MDAvatar/
+│   │   │   ├── MDBadge/
+│   │   │   ├── MDBox/
+│   │   │   ├── MDButton/
+│   │   │   ├── MDDateInput/
+│   │   │   ├── MDInput/
+│   │   │   ├── MDPagination/
+│   │   │   ├── MDProgress/
+│   │   │   ├── MDSnackbar/
+│   │   │   ├── MDTypography/
+│   │   │   └── ScheduleTable.js
+│   │   ├── context/
+│   │   │   └── index.js
+│   │   ├── examples/
+│   │   │   ├── Breadcrumbs/
+│   │   │   ├── Cards/
+│   │   │   ├── Charts/
+│   │   │   ├── Configurator/
+│   │   │   ├── EditableTable/
+│   │   │   ├── Footer/
+│   │   │   ├── Items/
+│   │   │   ├── LayoutContainers/
+│   │   │   ├── Lists/
+│   │   │   ├── Navbars/
+│   │   │   ├── ProtectedRoute/
+│   │   │   ├── Sidenav/
+│   │   │   ├── Tables/
+│   │   │   └── Timeline/
+│   │   ├── forms/
+│   │   │   └── StationMaintenance/
+│   │   │       └── index.js
+│   │   ├── index.js
+│   │   ├── layouts/
+│   │   │   ├── authentication/
+│   │   │   ├── billing/
+│   │   │   ├── clash-summary/
+│   │   │   ├── dashboard/
+│   │   │   ├── free-slot/
+│   │   │   ├── guidelines-change/
+│   │   │   ├── maintenance/
+│   │   │   ├── notifications/
+│   │   │   ├── profile/
+│   │   │   ├── reporting/
+│   │   │   ├── request-status/
+│   │   │   ├── rtl/
+│   │   │   ├── support-services/
+│   │   │   ├── support-services3/
+│   │   │   ├── tables/
+│   │   │   ├── test-passes/
+│   │   │   ├── under-construction/
+│   │   │   ├── user-management/
+│   │   │   └── user-profile/
+│   │   ├── routes.js
+│   │   └── services/
+│   │       ├── auth-service.js
+│   │       ├── htttp.service.js
+│   │       └── interceptor.js
+│   ├── src_bkp_080824/
+│   └── src_react.tar
+├── frontend_backup/
+├── package.json
+├── package-lock.json
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###########################
+        PENDING
+###########################
