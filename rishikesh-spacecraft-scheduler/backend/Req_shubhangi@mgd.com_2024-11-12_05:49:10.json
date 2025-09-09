@@ -1,0 +1,19 @@
+  GNU nano 5.6.1                                                        Req_shubhangi@mgd.com_2024-11-12_05:49:10.json                                                                   
+[
+  {
+    "id": "4",
+    "str": {
+      "id": "1",
+      "date": "2024 07 01",
+      "sc": "S25",
+      "stn": "BK1",
+      "orb": "21633",
+      "ele": "61.11",
+      "aos": "00:06:32",
+      "los": "01:27:24",
+      "oprn": "NO SUPPORT"
+    },
+    "req": "Book"
+  }
+]
+
