@@ -24,16 +24,18 @@ Prerequisites
     npm/yarn for package management
 
     MongoDB instance with required access permissions:
-    cd backend
-npm install
+
+# BACKEND INITALIZATION    
+# cd backend
+# nnpm install
 # Set environment variables and MongoDB connection credentials
-npm start 
+# npm start 
 # Launch API server with hot-reloading capabilities
 
-Frontend Initialization
-cd frontend
-npm install
-npm start
+# FRONTEND INITIALIZATION
+# cd frontend
+# npm install
+# npm start
 # Starts React development server with live reload
 
 
