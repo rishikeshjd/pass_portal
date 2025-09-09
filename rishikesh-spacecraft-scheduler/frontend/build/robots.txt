@@ -1,0 +1,7 @@
+  GNU nano 5.6.1                                                         robots.txt                                                                   
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Disallow:
+
+
+
