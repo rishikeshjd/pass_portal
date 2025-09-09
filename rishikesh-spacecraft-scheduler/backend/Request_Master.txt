@@ -1,0 +1,21 @@
+{
+  "user": "someUserIdentifier",
+  "commands": [
+    "Command_Alpha",
+    "Command_Bravo"
+  ],
+  "submittedAt": "2025-09-01T12:00:00Z"
+}
+==== New Command Request ====
+Time: 2025-09-03T04:14:32.847Z
+User: someUserIdentifier
+Commands: Command_Alpha, Command_Bravo
+Full Payload: {
+  "user": "someUserIdentifier",
+  "commands": [
+    "Command_Alpha",
+    "Command_Bravo"
+  ],
+  "submittedAt": "2025-09-01T12:00:00Z"
+}
+
