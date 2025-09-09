@@ -1,1 +1,27 @@
 
+[schedule_system@Sch-INT-Sys backend]$ ls -la
+total 2716
+drwxr-xr-x.   6 schedule_system schedule_system    4096 Sep  4 11:35 .
+drwxr-xr-x.   5 schedule_system schedule_system     105 Sep  3 10:03 ..
+-rw-r--r--.   1 schedule_system schedule_system 2303326 Sep  4 11:35 data.json
+-rw-r--r--.   1 schedule_system schedule_system     734 Sep  1 09:36 .env
+-rw-r--r--.   1 schedule_system schedule_system     165 Aug 26 10:40 .env_bkp
+-rw-r--r--.   1 schedule_system schedule_system     219 Aug 26 10:40 .env.example
+-rw-r--r--.   1 schedule_system schedule_system     353 Aug 26 10:40 .env_ip
+-rw-r--r--.   1 schedule_system schedule_system     343 Aug 26 10:40 .env_local
+-rw-r--r--.   1 schedule_system schedule_system      36 Aug 26 10:40 .gitignore
+drwxr-xr-x.   2 schedule_system schedule_system      60 Aug 26 10:40 images
+drwxr-xr-x. 407 schedule_system schedule_system   12288 Sep  1 09:36 node_modules
+-rw-r--r--.   1 schedule_system schedule_system    2074 Aug 26 10:40 package.json
+-rw-r--r--.   1 schedule_system schedule_system  332927 Sep  9 11:00 package-lock.json
+-rw-r--r--.   1 schedule_system schedule_system     784 Aug 26 10:40 pswd.json
+-rw-r--r--.   1 schedule_system schedule_system    7242 Aug 26 10:40 README.md
+-rw-r--r--.   1 schedule_system schedule_system    1333 Aug 26 10:40 Req_shubhangi_2024-07-15_11:43:12.json
+-rw-r--r--.   1 schedule_system schedule_system     535 Aug 26 10:40 Req_shubhangi_2024-07-16_04:13:05.json
+-rw-r--r--.   1 schedule_system schedule_system     804 Aug 26 10:40 Req_shubhangi_2024-07-16_11:36:01.json
+-rw-r--r--.   1 schedule_system schedule_system     269 Aug 26 10:40 Req_shubhangi@mgd.com_2024-11-12_05:49:10.json
+-rw-r--r--.   1 schedule_system schedule_system     416 Sep  3 09:44 Request_Master.txt
+-rw-r--r--.   1 schedule_system schedule_system     269 Aug 26 10:40 Req_undefined_2024-11-12_05:43:11.json
+drwxr-xr-x.   7 schedule_system schedule_system     114 Aug 26 10:40 src
+drwxr-xr-x.   7 schedule_system schedule_system     114 Aug 26 10:40 src_bkp_080824
+-rw-r--r--.   1 schedule_system schedule_system   51200 Aug 26 10:40 src_node.tar
