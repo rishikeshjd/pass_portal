@@ -1,0 +1,25 @@
+[schedule_system@Sch-INT-Sys frontend]$ ls
+build          
+material_node_modules.tgz  
+nm1.tgz  
+nm3      
+nm4.tgz  
+nm6           
+package.json       
+reqPackages.tgz
+envFiles.tgz   
+material_others.tgz        
+nm2      
+nm3.tgz  
+nm5      
+nm6.tgz       
+package-lock.json  
+src
+jsconfig.json  
+nm1                        
+nm2.tgz  
+nm4      
+nm5.tgz  
+node_modules  
+public             
+src_bkp_080824
