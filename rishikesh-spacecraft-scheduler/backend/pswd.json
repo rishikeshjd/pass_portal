@@ -1,0 +1,32 @@
+[
+  {
+    "user": "shubhangi@mgd.com",
+    "password": "$2b$10$td/WptK83V6ebvxSlihjD.vn6FJjlPwhZZ.MlhqL2GAYLxDD0ihT.",
+    "name": "Shubhangi Agrawal",
+    "sats": "S01,S03,S06,S09",
+    "roles": "admin"
+  },
+  {
+    "user": "aarohi@mgd.com",
+    "password": "$2b$10$LNqYIQj5wyITW0XRMQCThOBHP8Xgj/A2rVMdIjnL34q6x0gA/H0Am",
+    "name": "Aarohi Agrawal",
+    "sats": "S02,S04",
+    "roles": "controller"
+  },
+  {
+    "user": "test1@mgd.com",
+    "password": "$2b$10$rPb1zGaQdUs357vxT9o9f.nCx2eUiT0RG0VESEnamWFDR7Q9Dr/BG",
+    "name": "test1",
+    "sats": "S01,S05,S07",
+    "roles": "controller"
+  },
+  {
+    "user": "test2@mgd.com",
+    "password": "$2b$10$7fz.Iz4rxFeRwHtC8g.IsO0RTp6fm8BGqOhXwxwVpZwo1OrDRse3G",
+    "name": "test2",
+    "sats": "S08",
+    "roles": "controller"
+  }
+]
+
+
