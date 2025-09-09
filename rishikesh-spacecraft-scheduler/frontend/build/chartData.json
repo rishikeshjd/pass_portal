@@ -1,0 +1,20 @@
+{
+        "mnthlySprts": 
+        {
+                "labels": ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                "datasets": { "label": "Monthly Supports", "data": [50, 40, 300, 320, 500, 350, 200, 230, 500] }
+        },
+
+       	"stnsStats":
+        {
+                "labels": ["BLR", "PBR", "LCK", "TVM", "ANT", "SHR", "MAU", "---", "BIK"],
+                "datasets": { "label": "Supports this week", "data": [50, 40, 300, 220, 500, 250, 400, 230, 500] }
+        },
+	"wkly_sprts":
+        {
+                "labels": ["M", "T", "W", "T", "F", "S", "S"],
+                "datasets": { "label":"Sprts", "data": [50, 20, 10, 22, 50, 10, 40] }
+        }
+}
+
+
