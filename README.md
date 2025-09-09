@@ -26,17 +26,17 @@ Prerequisites
     MongoDB instance with required access permissions:
 
 # BACKEND INITALIZATION    
-# cd backend
-# nnpm install
-# Set environment variables and MongoDB connection credentials
-# npm start 
-# Launch API server with hot-reloading capabilities
+cd backend
+ nnpm install
+ Set environment variables and MongoDB connection credentials
+ npm start 
+ Launch API server with hot-reloading capabilities
 
 # FRONTEND INITIALIZATION
-# cd frontend
-# npm install
-# npm start
-# Starts React development server with live reload
+ cd frontend
+ npm install
+ npm start
+ Starts React development server with live reload
 
 
 # Critical Operational Notes
